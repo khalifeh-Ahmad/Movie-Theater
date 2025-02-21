@@ -1,0 +1,25 @@
+<search (search)="srchInput($event)" srchPlace=" Movies"></search>
+
+<div class="actors-container">
+
+  <div *ngFor="let actor of persons" class="actor-card">
+
+    <a [routerLink]="['/person', actor.id]" class="actor-card-link">
+      <!-- Actor Profile Image -->
+      <img [src]="'https://image.tmdb.org/t/p/w500' + actor.profile_path" [alt]="actor.name" class="actor-image" />
+      <!-- <img [src]="imagesSizes.medium" [alt]="actor.name" class="actor-image" /> -->
+
+      <!-- Actor Details -->
+      <div class="actor-details">
+        <h2>{{ actor.name }}</h2>
+        <h3 class="original-name">({{ actor.original_name }})</h3>
+        <p class="department">🎭 {{ actor.known_for_department }}</p>
+        <p class="popularity">⭐ Popularity: {{ actor.popularity }}</p>
+      </div>
+    </a>
+  </div>
+
+</div>
+<div class="navigate">
+  <p-paginator [rows]="20" [totalRecords]="10000" (onPageChange)="paginate($event)"></p-paginator>
+</div>

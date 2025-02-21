@@ -1,0 +1,11 @@
+<div class="genres-container">
+  <h1 class="title">Explore Genres</h1>
+  <div class="genres-grid">
+    <div *ngFor="let gen of genres" class="genre-card">
+      <a class="genre-link" [routerLink]="'/movies/genres/' + gen.id">
+        <img [src]="gen.image" [alt]="gen.name" class="genre-image" />
+        <span class="genre-name">{{ gen.name }}</span>
+      </a>
+    </div>
+  </div>
+</div>

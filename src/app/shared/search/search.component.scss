@@ -1,0 +1,54 @@
+
+@import '../../../styles/color';
+
+.grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.col-12 {
+  width: 100%;
+  max-width: 400px;
+}
+
+.p-fluid {
+  position: relative;
+  width: 100%;
+}
+
+.p-input-icon-left {
+  position: relative;
+  width: 100%;
+
+  i.pi-search {
+    position: absolute;
+    top: 70%;
+    left: 12px;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  input[pInputText] {
+    width: 100%;
+    padding: 10px 12px 10px 40px;
+    font-size: 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    outline: none;
+    transition: border 0.3s ease-in-out, background 0.3s ease-in-out;
+
+    &:focus {
+      border-color: $primaryColor;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+  }
+}

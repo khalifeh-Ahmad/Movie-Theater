@@ -1,0 +1,63 @@
+.actors-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  width: 90%;
+  margin: auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.actor-card {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.actor-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ffcc00;
+  margin-bottom: 10px;
+}
+
+.actor-details {
+  h2 {
+    font-size: 1.5rem;
+    margin: 5px 0;
+  }
+
+  .original-name {
+    font-size: 1rem;
+    color: #bbb;
+    margin-bottom: 10px;
+  }
+
+  .department {
+    font-size: 1rem;
+    color: #ffcc00;
+    font-weight: bold;
+  }
+
+  .popularity {
+    font-size: 1rem;
+    color: #ddd;
+    margin-top: 5px;
+  }
+
+}
+.navigate {
+  width: 90%; 
+  margin: 20px auto;
+}

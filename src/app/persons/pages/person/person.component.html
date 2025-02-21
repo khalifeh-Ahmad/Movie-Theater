@@ -1,0 +1,35 @@
+<ng-container *ngIf="person">
+  <div class="actor-profile-container">
+    <!-- Actor Profile Image -->
+    <div class="actor-profile-header">
+      <img [src]="'https://image.tmdb.org/t/p/w500' + person?.profile_path" alt="{{ person?.name }}"
+        class="actor-profile-image" />
+      <div class="actor-info">
+        <h1>{{ person?.name }}</h1>
+        <h2 class="also-known" *ngIf="person?.also_known_as?.length">
+          Also Known As:
+          <span *ngFor="let name of person?.also_known_as; let last = last">
+            {{ name }}<span *ngIf="!last">, </span>
+          </span>
+        </h2>
+
+        <p class="biography">{{ person?.biography }}</p>
+        <p class="birth-info">🎂 Born: {{ person?.birthday | date: 'longDate' }} | 📍 Birthplace: {{
+          person?.place_of_birth }}</p>
+        <p class="biography" *ngIf="person?.deathday">
+          📅 Died: {{ person?.deathday | date: 'longDate' }}
+        </p>
+        <p class="popularity">⭐ Popularity: {{ person?.popularity }}</p>
+      </div>
+    </div>
+  </div>
+  <h1 style="text-align: center;">Images Gallery</h1>
+  <div class="image-gallery grid">
+    <ng-container *ngFor="let pImage of pImages?.profiles">
+      <div class="col-12 md:col-4 lg:col-3 image-card">
+        <p-image [src]="imagesSizes.large + pImage.file_path" alt="Image" width="100%" [preview]="true"
+          class="gallery-image"></p-image>
+      </div>
+    </ng-container>
+  </div>
+</ng-container>

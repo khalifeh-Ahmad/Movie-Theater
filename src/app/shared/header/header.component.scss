@@ -1,0 +1,85 @@
+
+@import '../../../styles/color';
+header {
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 2rem;
+    height: 70px;
+    background-color: $bgColorLight;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    &-logo {
+      display: block;
+      img {
+        width: 65px;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      img:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    &-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap; 
+
+
+      li {
+        display: inline-block;
+
+        a {
+          text-decoration: none;
+          font-size: 1.2rem;
+          font-weight: 500;
+          color: white;
+          padding: 8px 12px;
+          transition: color 0.3s ease-in-out, transform 0.2s;
+
+          &:hover {
+            color: $primaryColor;
+            transform: scale(1.05);
+          }
+
+          &.active {
+            color: $primaryColor;
+            border-bottom: 2px solid $primaryColor;
+          }
+        }
+      }
+    }
+  }
+
+  // Responsive styles
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: center;
+      height: auto;
+      padding: 1rem;
+
+      &-logo {
+        margin-bottom: 10px;
+      }
+
+      &-links {
+        flex-direction: column;
+        position: static;
+        transform: none;
+        gap: 10px;
+      }
+    }
+  }
+
+}
+
+

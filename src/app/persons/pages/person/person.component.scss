@@ -1,0 +1,99 @@
+
+.actor-profile-container {
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 50px !important;
+  margin-top: 50px !important;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+.actor-profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.actor-profile-image {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.actor-info {
+  max-width: 70%;
+}
+
+.actor-info h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.actor-info h2 {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.actor-info h2 span {
+  color: #007bff;
+  margin-right: 5px;
+}
+
+.actor-info .biography {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 20px;
+  max-width: 80%;
+  white-space: pre-line;
+}
+
+.actor-info .birth-info {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.actor-info .popularity {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #e09a34;
+}
+
+@media (max-width: 768px) {
+  .actor-profile-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .actor-profile-image {
+    width: 150px;
+    height: 225px;
+  }
+
+  .actor-info {
+    max-width: 100%;
+  }
+
+  .actor-info h1 {
+    font-size: 2rem;
+  }
+
+  .actor-info h2 {
+    font-size: 1rem;
+  }
+
+  .actor-info .biography {
+    font-size: 0.9rem;
+  }
+}

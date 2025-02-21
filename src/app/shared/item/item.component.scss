@@ -1,0 +1,115 @@
+@import '../../../styles/color';
+
+.item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 450px;
+  border-radius: 12px;
+  background-color: $bgColorLight;
+  border: none;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+
+  &-image {
+    width: 100%;
+    img {
+      width: 100%;
+      height: 380px;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+  }
+
+  &-more {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 6px;
+    border-radius: 50%;
+    cursor: pointer;
+    i {
+      color: white;
+      font-size: 1.2rem;
+    }
+  }
+
+  &-rating {
+    position: absolute;
+    bottom: 50px;
+    left: 15px;
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #009688;
+    font-size: 1rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+    .rating-circle {
+      position: relative;
+      width: 50px;
+      height: 50px;
+    }
+
+    .rating-bg {
+      fill: none;
+      stroke: #ddd;
+      stroke-width: 3;
+    }
+
+    .rating-progress {
+      fill: none;
+      stroke: #009688;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-dasharray: 100, 100;
+      transition: stroke-dashoffset 0.5s ease-in-out;
+    }
+
+    .rating-text {
+      font-size: 10px;
+      font-weight: bold;
+      fill: black;
+    
+    }
+  }
+
+  &-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    background: linear-gradient(to top, rgba(0, 150, 136, 0.5), transparent);
+  }
+
+  &-title {
+    position: absolute;
+    bottom: 35px;
+    font-weight: bold;
+    color: wheat;
+    text-align: center;
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  &-date {
+    position: absolute;
+    bottom: 15px;
+    color: white;
+    font-size: 0.9rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  &:hover {
+    transform: scale(1.03);
+  }
+}

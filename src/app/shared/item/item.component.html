@@ -1,0 +1,30 @@
+<ng-container *ngIf="itemData">
+  <a class="item" [routerLink]="['/', url, itemData.id]">
+    <div class="item-more">
+      <i class="pi pi-ellipsis-h"></i>
+    </div>
+    <div class="item-image">
+      <img [src]="imagesSizes.medium + itemData.poster_path" [alt]="itemData.title" />
+    </div>
+
+    <div class="item-rating">
+      <svg class="rating-circle" width="50" height="50" viewBox="0 0 36 36">
+        <!-- Background Circle -->
+        <circle class="rating-bg" cx="18" cy="18" r="16"></circle>
+        <!-- Dynamic Rating Progress -->
+        <circle class="rating-progress" cx="18" cy="18" r="16" [attr.stroke-dasharray]="'100, 100'"
+          [attr.stroke-dashoffset]="getRatingOffset()">
+        </circle>
+        <!-- Rating Text -->
+        <text x="18" y="20.5" text-anchor="middle" class="rating-text">
+          {{ (itemData?.vote_average || 0) * 10 | number: '1.0-0' }}%
+        </text>
+      </svg>
+    </div>
+
+    <div class="item-overlay"></div>
+    <div class="item-title">{{ itemData?.title }}</div>
+    <div class="item-date">{{ itemData?.release_date | date: 'MMM dd, yyyy' }}</div>
+  </a>
+</ng-container>
+
