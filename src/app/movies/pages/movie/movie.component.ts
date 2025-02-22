@@ -51,6 +51,7 @@ export class MovieComponent implements OnInit,OnDestroy {
     getMovieCredits(id: string) {
       this.srv.getMovieCredits(id).subscribe((mvCrdt) => {
         this.movieCredits = mvCrdt;
+      
       });
     }
   

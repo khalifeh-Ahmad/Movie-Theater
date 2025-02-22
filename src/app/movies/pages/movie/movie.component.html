@@ -76,8 +76,24 @@
   <p-carousel [numVisible]="6" *ngIf="movieCredits" [value]="movieCredits.cast">
     <ng-template let-actor pTemplate="item">
       <div class="actor">
-        <img [src]="imagesSizes.medium + actor.profile_path" alt="" />
-        <span>{{ actor.name }}</span>
+        <a [routerLink]="['/person', actor.id]">
+          <img [src]="imagesSizes.medium + actor.profile_path" alt="" />
+          <span>{{ actor.name }}</span></a>
+      </div>
+    </ng-template>
+  </p-carousel>
+
+  <div class="" style="text-align: center !important;">
+    <h1>CREW</h1>
+  </div>
+  <p-carousel [numVisible]="6" *ngIf="movieCredits" [value]="movieCredits.crew">
+    <ng-template let-actor pTemplate="item">
+      <div class="actor">
+        <a [routerLink]="['/person', actor.id]">
+          <img [src]="imagesSizes.medium + actor.profile_path" alt="" />
+          <span>{{ actor.name }}</span>
+          <span>{{ actor.job }}</span>
+        </a>
       </div>
     </ng-template>
   </p-carousel>

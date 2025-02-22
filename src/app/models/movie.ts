@@ -52,4 +52,10 @@ export interface MovieCredits {
     name: string;
     profile_path: string;
   }[];
+  crew: {
+    name: string;
+    profile_path: string;
+    job: string;
+    department: string;
+  }[];
 }

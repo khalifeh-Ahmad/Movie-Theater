@@ -99,6 +99,7 @@ export class MoviesService {
         map((res) => ({
           ...res,
           cast: res.cast.slice(0, 25),
+          crew: res.crew.slice(0, 20),
         }))
       );
     //.pipe(switchMap(res => of({ cast: res.cast.slice(0, 10) })));
