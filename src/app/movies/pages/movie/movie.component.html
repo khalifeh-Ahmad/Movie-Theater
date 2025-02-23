@@ -45,6 +45,15 @@
               </span>
             </div>
           </div>
+          <div class="stat">
+            <div class="label">Production Company:</div>
+            <div *ngFor="let cmp of movie.production_companies">
+              <a [routerLink]="['/company', cmp.id]" class="cmp"> <span>
+                  {{ cmp.name }},
+                </span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </p-tabPanel>

@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import {
+  Company,
+  CompanyImages,
   Movie,
   MovieCredits,
   MovieDto,
@@ -128,5 +130,18 @@ export class MoviesService {
           return of(res.results);
         })
       );
+  }
+
+  getCompany(id: string) {
+    return this.http.get<Company>(
+      `${environment.baseUrl}/company/${id}?api_key=${environment.apiKey}`
+    );
+  }
+  companyImages(id: string): Observable<CompanyImages> {
+    return this.http
+      .get<CompanyImages>(
+        `${environment.baseUrl}/company/${id}/images?api_key=${environment.apiKey}`
+      )
+      .pipe(switchMap((res) => of({ logos: res.logos.slice(0, 12) })));
   }
 }

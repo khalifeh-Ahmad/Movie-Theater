@@ -16,6 +16,7 @@ export interface Movie {
   revenue: number;
   runtime: number;
   status: string;
+  production_companies: Company[];
   genres: Genre[];
 }
 
@@ -29,6 +30,17 @@ export interface MovieDto {
 export interface Genre {
   id: number;
   name: string;
+}
+export interface Company {
+  id: number;
+  logo_path: string;
+  name: string;
+  origin_country: string;
+  description: string;
+  headquarters: string;
+  homepage: string;
+
+  parent_company: string;
 }
 
 export interface MovieVideoDto {
@@ -57,5 +69,11 @@ export interface MovieCredits {
     profile_path: string;
     job: string;
     department: string;
+  }[];
+}
+
+export interface CompanyImages {
+  logos: {
+    file_path: string;
   }[];
 }

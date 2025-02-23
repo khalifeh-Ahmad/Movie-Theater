@@ -11,9 +11,10 @@ import { GenresComponent } from './pages/genres/genres.component';
 import { HomeModule } from '../home/home.module';
 import { RouterModule } from '@angular/router';
 import { MoviesRoutingModule } from './movies-routing.module';
+import { CompanyComponent } from './pages/company/company.component';
 
 @NgModule({
-  declarations: [MoviesComponent, MovieComponent, GenresComponent],
+  declarations: [MoviesComponent, MovieComponent, GenresComponent, CompanyComponent],
   imports: [
     CommonModule,
     MoviesRoutingModule,

@@ -27,7 +27,7 @@
   <div class="image-gallery grid">
     <ng-container *ngFor="let pImage of pImages?.profiles">
       <div class="col-12 md:col-4 lg:col-3 image-card">
-        <p-image [src]="imagesSizes.large + pImage.file_path" alt="Image" width="100%" [preview]="true"
+        <p-image [src]="imagesSizes.medium + pImage.file_path" alt="Image" width="100%" [preview]="true"
           class="gallery-image"></p-image>
       </div>
     </ng-container>

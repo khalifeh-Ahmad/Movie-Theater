@@ -32,7 +32,6 @@ export class PersonComponent implements OnInit {
 
   getPersonMovieCredits(id: string) {
     this.pSrv.pImages(id).subscribe((pMvCrdt) => {
-      console.log(pMvCrdt)
       this.pImages = pMvCrdt;
     });
   }
